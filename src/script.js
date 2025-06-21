@@ -1,5 +1,7 @@
 const citySelector = document.querySelector("#city-selector");
+const citiesHome = document.querySelector(".cities-home");
 const citiesElement = document.querySelector(".cities");
+
 let intervalID;
 
 //Los Angeles Elements
@@ -54,6 +56,12 @@ setInterval(() => {
 }, 1000);
 
 function updateCity(event) {
+  if (!citiesHome.classList.contains("hidden")) {
+    citiesHome.classList.add("hidden");
+  }
+  if (citiesElement.classList.contains("hidden")) {
+    citiesElement.classList.remove("hidden");
+  }
   let timezone = event.target.value;
   if (timezone === "local-city") {
     timezone = moment.tz.guess();
@@ -70,7 +78,9 @@ function updateCity(event) {
             <div class="date">${date}</div>
           </div>
           <div class="time">${time}</div>
-        </div>`;
+          
+        </div>
+        <button class="all-cities-btn">All Cities</button>`;
 
   if (intervalID) {
     clearInterval(intervalID);
@@ -83,6 +93,14 @@ function updateCity(event) {
   intervalID = setInterval(() => {
     updateDateAndTime(dateElement, timeElement, timezone);
   }, 1000);
+
+  const allCitiesBtn = document.querySelector(".all-cities-btn");
+  allCitiesBtn.addEventListener("click", showAllCities);
+}
+
+function showAllCities() {
+  citiesHome.classList.remove("hidden");
+  citiesElement.classList.add("hidden");
 }
 
 citySelector.addEventListener("change", updateCity);
