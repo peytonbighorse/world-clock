@@ -66,7 +66,8 @@ function updateCity(event) {
   if (timezone === "local-city") {
     timezone = moment.tz.guess();
   }
-  const cityName = timezone.replace("_", " ").split("/")[1];
+  let cityName = timezone.replace("_", " ").split("/");
+  cityName = cityName[cityName.length - 1];
   const date = moment().tz(timezone).format("MMMM D, YYYY");
   const time = moment()
     .tz(timezone)
