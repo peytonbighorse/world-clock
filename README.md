@@ -1,5 +1,5 @@
 # World Clock
-A simple world clcok built as part of the SheCodes curriculum.
+A simple world clock built as part of the SheCodes curriculum.
 
 **Live Version:** [https://peytons-world-clock.netlify.app/](https://peytons-world-clock.netlify.app/)
 
