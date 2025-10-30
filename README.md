@@ -8,6 +8,8 @@ A simple world clcok built as part of the SheCodes curriculum.
 - **HTML5** - Structure  
 - **CSS3** - Styling 
 - **Vanilla JavaScript** - DOM manipulation
+- **Axios** - API requests  
+- **Netlify** - Hosting and deployment  
 
 ## About Me
 
